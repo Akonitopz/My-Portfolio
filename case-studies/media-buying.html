@@ -60,11 +60,27 @@
   .case-body li{font-size:14px;color:#C3CAD1;padding-left:16px;position:relative;margin-bottom:9px;line-height:1.5}
   .case-body li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--bright);border-radius:1px}
 
-  /* CREATIVES SLOTS */
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  @media(max-width:640px){.gallery{grid-template-columns:1fr}}
-  .slot{border:1.5px dashed var(--line);border-radius:10px;padding:28px 16px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6;background:#fff;min-height:180px;display:flex;flex-direction:column;justify-content:center}
-  .slot strong{color:var(--ink);display:block;font-size:12.5px;margin-bottom:4px}
+  /* KPI LINK */
+  .kpi-link{font-family:var(--mono);font-size:13px;color:var(--bright);display:inline-flex;align-items:center;gap:7px;margin-top:20px;border:1px solid var(--panel-soft);padding:10px 16px;border-radius:8px;transition:border-color .15s}
+  .kpi-link:hover{border-color:var(--bright)}
+
+  /* CAROUSEL */
+  .carousel-wrap{position:relative;margin-top:8px}
+  .carousel-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:none}
+  .carousel-track::-webkit-scrollbar{display:none}
+  .carousel-slide{flex:0 0 calc(33.333% - 10px);scroll-snap-align:start}
+  @media(max-width:800px){.carousel-slide{flex:0 0 calc(50% - 8px)}}
+  @media(max-width:520px){.carousel-slide{flex:0 0 100%}}
+  .slot{border:1.5px dashed var(--line);border-radius:10px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6;background:#fff;overflow:hidden;height:100%}
+  .slot img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+  .carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+  .carousel-dots{display:flex;gap:6px;flex-wrap:wrap}
+  .carousel-dot{width:7px;height:7px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s}
+  .carousel-dot.active{background:var(--bright);transform:scale(1.25)}
+  .carousel-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:16px;transition:border-color .15s,background .15s}
+  .carousel-btn:hover{border-color:var(--green);background:var(--paper)}
+  .carousel-btn:disabled{opacity:0.3;cursor:default}
+  .carousel-nav{display:flex;gap:8px}
 
   footer{padding:32px 0;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
 
@@ -97,14 +113,13 @@
 <section>
   <div class="wrap">
     <span class="sec-label">Portfolio overview</span>
-    <h2 class="sec-title">All Four Brands Combined</h2>
+    <h2 class="sec-title">All 4 brands combined</h2>
     <div class="stats reveal">
       <div class="stat"><div class="n">$584K+</div><div class="l">Total spend</div></div>
       <div class="stat"><div class="n">263,000+</div><div class="l">Total leads</div></div>
       <div class="stat"><div class="n">11,289</div><div class="l">Total customers</div></div>
       <div class="stat"><div class="n">$2.22</div><div class="l">Blended CPL</div></div>
     </div>
-    <p class="stats-note reveal">// Jul 2025 to present · 4 brands · verified from daily KPI records</p>
     <div style="border-radius:10px;overflow:hidden;border:1px solid var(--line)" class="reveal">
       <img src="../images/kpi-combined.png" alt="Combined portfolio weekly lead volume, July 2025 to May 2026" style="display:block;width:100%;height:auto">
     </div>
@@ -144,13 +159,30 @@
           </ul>
         </div>
       </div>
+      <a href="https://docs.google.com/spreadsheets/d/16aQkIZvSvPMozlIxgw9N75-pmY_k0P8EGDc8UeJZ-jo/edit?usp=sharing" target="_blank" rel="noopener" class="kpi-link">📄 View raw KPI data →</a>
     </div>
     <div class="reveal">
       <p style="font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:18px">// Ad creatives that ran for AGOA</p>
-      <div class="gallery">
-        <div class="slot"><strong>[ Ad creative #1 ]</strong>Best performer. Add result.</div>
-        <div class="slot"><strong>[ Ad creative #2 ]</strong>Different angle or format.</div>
-        <div class="slot"><strong>[ Ad creative #3 ]</strong>Optional, strongest only.</div>
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-1.jpg" alt="AGOA ad creative 1"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-2.png" alt="AGOA ad creative 2"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-3.png" alt="AGOA ad creative 3"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-4.png" alt="AGOA ad creative 4"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-5.png" alt="AGOA ad creative 5"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-6.png" alt="AGOA ad creative 6"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-7.png" alt="AGOA ad creative 7"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-8.png" alt="AGOA ad creative 8"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-9.png" alt="AGOA ad creative 9"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AGOA Proven Ads/agoa-creative-10.png" alt="AGOA ad creative 10"></div></div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev">&#8592;</button>
+            <button class="carousel-btn next">&#8594;</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -170,13 +202,30 @@
         <div><div class="n">6,676</div><div class="l">Customers acquired</div></div>
       </div>
       <div class="case-chart"><img src="../images/kpi-aoq.png" alt="AOQ daily KPI chart"></div>
+      <a href="https://docs.google.com/spreadsheets/d/16aQkIZvSvPMozlIxgw9N75-pmY_k0P8EGDc8UeJZ-jo/edit?usp=sharing" target="_blank" rel="noopener" class="kpi-link">📄 View raw KPI data →</a>
     </div>
     <div class="reveal">
       <p style="font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:18px">// Ad creatives that ran for AOQ</p>
-      <div class="gallery">
-        <div class="slot"><strong>[ Ad creative #1 ]</strong>Best performer. Add result.</div>
-        <div class="slot"><strong>[ Ad creative #2 ]</strong>Different angle or format.</div>
-        <div class="slot"><strong>[ Ad creative #3 ]</strong>Optional, strongest only.</div>
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-1.png" alt="AOQ ad creative 1"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-2.png" alt="AOQ ad creative 2"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-3.png" alt="AOQ ad creative 3"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-4.png" alt="AOQ ad creative 4"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-5.png" alt="AOQ ad creative 5"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-6.png" alt="AOQ ad creative 6"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-7.png" alt="AOQ ad creative 7"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-8.png" alt="AOQ ad creative 8"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-9.png" alt="AOQ ad creative 9"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/AOQ Proven Ads/agoa-creative-10.png" alt="AOQ ad creative 10"></div></div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev">&#8592;</button>
+            <button class="carousel-btn next">&#8594;</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -196,13 +245,30 @@
         <div><div class="n">518</div><div class="l">Customers acquired</div></div>
       </div>
       <div class="case-chart"><img src="../images/kpi-ebg.png" alt="EBG daily KPI chart"></div>
+      <a href="https://docs.google.com/spreadsheets/d/16aQkIZvSvPMozlIxgw9N75-pmY_k0P8EGDc8UeJZ-jo/edit?usp=sharing" target="_blank" rel="noopener" class="kpi-link">📄 View raw KPI data →</a>
     </div>
     <div class="reveal">
       <p style="font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:18px">// Ad creatives that ran for EBG</p>
-      <div class="gallery">
-        <div class="slot"><strong>[ Ad creative #1 ]</strong>Best performer. Add result.</div>
-        <div class="slot"><strong>[ Ad creative #2 ]</strong>Different angle or format.</div>
-        <div class="slot"><strong>[ Ad creative #3 ]</strong>Optional, strongest only.</div>
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-1.png" alt="EBG ad creative 1"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-2.png" alt="EBG ad creative 2"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-3.png" alt="EBG ad creative 3"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-4.png" alt="EBG ad creative 4"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-5.png" alt="EBG ad creative 5"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-6.png" alt="EBG ad creative 6"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-7.png" alt="EBG ad creative 7"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-8.png" alt="EBG ad creative 8"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-9.png" alt="EBG ad creative 9"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/EBG Proven Ads/agoa-creative-10.png" alt="EBG ad creative 10"></div></div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev">&#8592;</button>
+            <button class="carousel-btn next">&#8594;</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -222,13 +288,30 @@
         <div><div class="n">1,024</div><div class="l">Customers at $38.92 CPA</div></div>
       </div>
       <div class="case-chart"><img src="../images/kpi-fbbq.png" alt="FBBQ daily KPI chart"></div>
+      <a href="https://docs.google.com/spreadsheets/d/16aQkIZvSvPMozlIxgw9N75-pmY_k0P8EGDc8UeJZ-jo/edit?usp=sharing" target="_blank" rel="noopener" class="kpi-link">📄 View raw KPI data →</a>
     </div>
     <div class="reveal">
       <p style="font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:18px">// Ad creatives that ran for FBBQ</p>
-      <div class="gallery">
-        <div class="slot"><strong>[ Ad creative #1 ]</strong>Best performer. Add result.</div>
-        <div class="slot"><strong>[ Ad creative #2 ]</strong>Different angle or format.</div>
-        <div class="slot"><strong>[ Ad creative #3 ]</strong>Optional, strongest only.</div>
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-1.png" alt="FBBQ ad creative 1"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-2.png" alt="FBBQ ad creative 2"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-3.png" alt="FBBQ ad creative 3"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-4.png" alt="FBBQ ad creative 4"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-5.jpg" alt="FBBQ ad creative 5"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-6.jpg" alt="FBBQ ad creative 6"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-7.jpg" alt="FBBQ ad creative 7"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-8.png" alt="FBBQ ad creative 8"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-9.png" alt="FBBQ ad creative 9"></div></div>
+          <div class="carousel-slide"><div class="slot"><img src="../images/FBBQ Proven Ads/agoa-creative-10.png" alt="FBBQ ad creative 10"></div></div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev">&#8592;</button>
+            <button class="carousel-btn next">&#8594;</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -237,8 +320,71 @@
 <footer><div class="wrap">Kristopher Villafuerte · <a href="../index.html" style="color:var(--bright)">← Back to home</a></div></footer>
 
 <script>
+  // Reveal on scroll
   const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0.08});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,4)*0.06)+'s';io.observe(el)});
+
+  // Carousel — native CSS scroll snap, no width math
+  document.querySelectorAll('[data-carousel]').forEach(wrap => {
+    const track   = wrap.querySelector('.carousel-track');
+    const slides  = wrap.querySelectorAll('.carousel-slide');
+    const dotsEl  = wrap.querySelector('.carousel-dots');
+    const prevBtn = wrap.querySelector('.prev');
+    const nextBtn = wrap.querySelector('.next');
+    const total   = slides.length;
+    let autoTimer;
+
+    function visibleCount(){
+      const w = wrap.offsetWidth;
+      if(w < 520) return 1;
+      if(w < 800) return 2;
+      return 3;
+    }
+    function currentIndex(){
+      const slideW = slides[0].offsetWidth + 14;
+      return Math.round(track.scrollLeft / slideW);
+    }
+    function scrollToIdx(idx){
+      const vc = visibleCount();
+      const max = total - vc;
+      const safe = Math.max(0, Math.min(idx, max));
+      const slideW = slides[0].offsetWidth + 14;
+      track.scrollLeft = safe * slideW;
+    }
+    function buildDots(){
+      dotsEl.innerHTML = '';
+      const pages = Math.ceil(total / visibleCount());
+      for(let i=0;i<pages;i++){
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i===0?' active':'');
+        d.addEventListener('click', () => { clearInterval(autoTimer); scrollToIdx(i*visibleCount()); startAuto(); });
+        dotsEl.appendChild(d);
+      }
+    }
+    function syncDots(){
+      const vc = visibleCount();
+      const page = Math.floor(currentIndex()/vc);
+      dotsEl.querySelectorAll('.carousel-dot').forEach((d,i) => d.classList.toggle('active', i===page));
+      prevBtn.disabled = track.scrollLeft <= 1;
+      nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.offsetWidth - 1;
+    }
+    prevBtn.addEventListener('click', () => { clearInterval(autoTimer); scrollToIdx(currentIndex()-1); startAuto(); });
+    nextBtn.addEventListener('click', () => { clearInterval(autoTimer); scrollToIdx(currentIndex()+1); startAuto(); });
+    track.addEventListener('scroll', syncDots, {passive:true});
+    function startAuto(){
+      autoTimer = setInterval(() => {
+        const vc = visibleCount();
+        const idx = currentIndex();
+        scrollToIdx(idx + vc >= total ? 0 : idx + 1);
+      }, 3500);
+    }
+    track.addEventListener('touchstart', () => clearInterval(autoTimer), {passive:true});
+    track.addEventListener('touchend', () => startAuto(), {passive:true});
+    window.addEventListener('resize', () => { buildDots(); syncDots(); });
+    buildDots();
+    syncDots();
+    startAuto();
+  });
 </script>
 </body>
 </html>

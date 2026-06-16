@@ -7,12 +7,14 @@
 <title>Social Media & Community Management — Kristopher Villafuerte</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#14171C;--paper:#F8F7F4;--card:#fff;--line:#E5E4DE;--muted:#6A6E76;--green:#126E50;--bright:#2BC592;--panel:#10151A;--panel-soft:#1A222B;--display:"Space Grotesk",sans-serif;--body:"Hanken Grotesk",sans-serif;--mono:"IBM Plex Mono",monospace;--maxw:1080px}
+  :root{--ink:#14171C;--paper:#F8F7F4;--card:#fff;--line:#E5E4DE;--muted:#6A6E76;--green:#126E50;--bright:#2BC592;--amber:#E8A33D;--panel:#10151A;--panel-soft:#1A222B;--display:"Space Grotesk",sans-serif;--body:"Hanken Grotesk",sans-serif;--mono:"IBM Plex Mono",monospace;--maxw:1080px}
   *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
   body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   a{color:inherit;text-decoration:none}
   .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bright);font-weight:500}
+
   header{position:sticky;top:0;z-index:50;background:rgba(16,21,26,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--panel-soft)}
   .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
   .logo{display:flex;align-items:center;gap:10px}
@@ -21,24 +23,61 @@
   .logo-name span{color:var(--bright)}
   .back{font-family:var(--mono);font-size:12px;color:#9AA4AE;transition:color .15s}
   .back:hover{color:var(--bright)}
+
   .page-hero{background:var(--panel);color:#fff;padding:64px 0 52px}
   .page-hero .eyebrow{margin-bottom:16px;display:block}
-  .page-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,44px);letter-spacing:-0.025em;line-height:1.06;max-width:20ch}
-  .page-hero p{margin-top:16px;font-size:16px;color:#9AA4AE;max-width:54ch}
+  .page-hero h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.5vw,48px);letter-spacing:-0.025em;line-height:1.05;max-width:20ch}
+  .page-hero p{margin-top:18px;font-size:16px;color:#9AA4AE;max-width:56ch}
+
   section{padding:64px 0}
   section+section{border-top:1px solid var(--line)}
-  h2.sec-title{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.8vw,28px);letter-spacing:-0.02em;margin:10px 0 14px}
-  .sec-label{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:10px;display:block}
-  .coming{border:1.5px dashed var(--line);border-radius:14px;padding:48px 32px;text-align:center;background:#fff}
-  .coming h3{font-family:var(--display);font-size:18px;margin-bottom:10px}
-  .coming p{font-size:14px;color:var(--muted);max-width:46ch;margin:0 auto}
-  .coming .tag{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:11px;background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:6px;color:var(--green)}
+  .sec-label{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:block}
+  h2.sec-title{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,30px);letter-spacing:-0.02em;margin-bottom:16px}
+  .sec-sub{color:var(--muted);font-size:14.5px;max-width:58ch;margin-bottom:32px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:32px}
+  .stat{background:var(--card);padding:20px 18px}
+  .stat .n{font-family:var(--mono);font-weight:600;font-size:clamp(20px,2.6vw,26px);letter-spacing:-0.02em}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:5px}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  .case{background:var(--panel);border-radius:16px;padding:clamp(24px,3.5vw,44px);margin-bottom:20px}
+  .case .eyebrow{color:var(--bright)}
+  .case h3{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.5vw,24px);color:#fff;margin:10px 0 6px;letter-spacing:-0.015em}
+  .case .role{font-family:var(--mono);font-size:12px;color:#8C97A2;margin-bottom:24px}
+  .case-chart{border-radius:10px;overflow:hidden;border:1px solid var(--panel-soft);margin-bottom:24px}
+  .case-chart img{display:block;width:100%;height:auto}
+  .case p.note{font-size:14.5px;color:#C3CAD1;line-height:1.6;margin-bottom:20px}
+  .kpi-link{font-family:var(--mono);font-size:13px;color:var(--bright);display:inline-flex;align-items:center;gap:7px;border:1px solid var(--panel-soft);padding:10px 16px;border-radius:8px;transition:border-color .15s}
+  .kpi-link:hover{border-color:var(--bright)}
+
+  /* CAROUSEL */
+  .carousel-wrap{position:relative;margin-top:8px}
+  .carousel-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:none}
+  .carousel-track::-webkit-scrollbar{display:none}
+  .carousel-slide{flex:0 0 calc(33.333% - 10px);scroll-snap-align:start}
+  @media(max-width:800px){.carousel-slide{flex:0 0 calc(50% - 8px)}}
+  @media(max-width:520px){.carousel-slide{flex:0 0 100%}}
+  .slot{border:1.5px dashed var(--line);border-radius:10px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6;background:#fff;overflow:hidden;height:100%;min-height:200px;display:flex;flex-direction:column;justify-content:center;padding:20px}
+  .slot strong{color:var(--ink);display:block;font-size:12.5px;margin-bottom:4px}
+  .slot img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+  .carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+  .carousel-dots{display:flex;gap:6px;flex-wrap:wrap}
+  .carousel-dot{width:7px;height:7px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s}
+  .carousel-dot.active{background:var(--bright);transform:scale(1.25)}
+  .carousel-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:16px;transition:border-color .15s,background .15s}
+  .carousel-btn:hover{border-color:var(--green);background:var(--paper)}
+  .carousel-btn:disabled{opacity:0.3;cursor:default}
+  .carousel-nav{display:flex;gap:8px}
+
   footer{padding:32px 0;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
   .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap bar">
     <div class="logo">
@@ -48,28 +87,126 @@
     <a href="../index.html" class="back">← Back to home</a>
   </div>
 </header>
+
 <div class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">Case Studies · Social Media & Community Management</span>
-    <h1>High-engagement community management and content that drives reach.</h1>
-    <p>400 to 500+ comments moderated daily. 20 to 60+ group approvals daily. Content that converts.</p>
+    <span class="eyebrow">Case Studies · Social Media & Community</span>
+    <h1>35,000+ comments moderated across 6 communities.</h1>
+    <p>Daily moderation, member approvals, engagement posts, and social proof content. Tracked daily, backed by raw data.</p>
   </div>
 </div>
+
+<!-- COMMUNITY OVERVIEW -->
 <section>
   <div class="wrap">
-    <span class="sec-label">Coming soon</span>
-    <h2 class="sec-title">Case studies in progress</h2>
-    <div class="coming reveal">
-      <h3>This page is being built</h3>
-      <p>Detailed case studies, proof assets, and results for this service lane are being compiled. Check back soon or reach out directly.</p>
-      <span class="tag">In progress</span>
+    <span class="sec-label">Community management overview</span>
+    <h2 class="sec-title">6 communities, daily moderation</h2>
+    <div class="stats reveal">
+      <div class="stat"><div class="n">35,784</div><div class="l">Comments moderated</div></div>
+      <div class="stat"><div class="n">5,629</div><div class="l">Member approvals</div></div>
+      <div class="stat"><div class="n">757</div><div class="l">Peak comments in a day</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Communities managed</div></div>
+    </div>
+    <div class="case reveal">
+      <div class="case-chart"><img src="../images/community-engagement.png" alt="Weekly comments moderated and group approvals across 6 communities"></div>
+      <p class="note">Daily moderation across AGOA, AOQ, EBG, FBBQ, OST, and YMA communities from August 2025 to February 2026. Handled comment moderation, member and post approvals, and direct messages, keeping response times fast even on 700+ comment days.</p>
+      <a href="https://docs.google.com/spreadsheets/d/1CRJCqkeV4vwarpqGPcYy5yLRvXrZgbEc/edit?usp=sharing" target="_blank" rel="noopener" class="kpi-link">📄 View raw community data →</a>
     </div>
   </div>
 </section>
+
+<!-- DAILY ENGAGEMENT POSTS -->
+<section>
+  <div class="wrap">
+    <span class="sec-label">Case Study 01</span>
+    <h2 class="sec-title">Daily engagement posts</h2>
+    <p class="sec-sub">Daily posts designed to spark conversation, keep communities active, and lift reach. A sample of what ran below.</p>
+    <div class="reveal">
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #1 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #2 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #3 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #4 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #5 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #6 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #7 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #8 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #9 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Engagement post #10 ]</strong>Add your post image.</div></div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev">&#8592;</button>
+            <button class="carousel-btn next">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF POSTS -->
+<section>
+  <div class="wrap">
+    <span class="sec-label">Case Study 02</span>
+    <h2 class="sec-title">Social proof posts</h2>
+    <p class="sec-sub">Customer wins, testimonials, and results reshared to build trust and drive new sign-ups. A sample below.</p>
+    <div class="reveal">
+      <div class="carousel-wrap" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #1 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #2 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #3 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #4 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #5 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #6 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #7 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #8 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #9 ]</strong>Add your post image.</div></div>
+          <div class="carousel-slide"><div class="slot"><strong>[ Social proof #10 ]</strong>Add your post image.</div></div>
+        </div>
+        <div class="carousel-controls">
+          <div class="carousel-dots"></div>
+          <div class="carousel-nav">
+            <button class="carousel-btn prev">&#8592;</button>
+            <button class="carousel-btn next">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap">Kristopher Villafuerte · <a href="../index.html" style="color:var(--bright)">← Back to home</a></div></footer>
+
 <script>
-  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,4)*0.06)+'s';io.observe(el)});
+
+  document.querySelectorAll('[data-carousel]').forEach(wrap => {
+    const track=wrap.querySelector('.carousel-track');
+    const slides=wrap.querySelectorAll('.carousel-slide');
+    const dotsEl=wrap.querySelector('.carousel-dots');
+    const prevBtn=wrap.querySelector('.prev');
+    const nextBtn=wrap.querySelector('.next');
+    const total=slides.length;
+    let autoTimer;
+    function visibleCount(){const w=wrap.offsetWidth;if(w<520)return 1;if(w<800)return 2;return 3;}
+    function currentIndex(){const sw=slides[0].offsetWidth+14;return Math.round(track.scrollLeft/sw);}
+    function scrollToIdx(idx){const vc=visibleCount();const max=total-vc;const safe=Math.max(0,Math.min(idx,max));const sw=slides[0].offsetWidth+14;track.scrollLeft=safe*sw;}
+    function buildDots(){dotsEl.innerHTML='';const pages=Math.ceil(total/visibleCount());for(let i=0;i<pages;i++){const d=document.createElement('button');d.className='carousel-dot'+(i===0?' active':'');d.addEventListener('click',()=>{clearInterval(autoTimer);scrollToIdx(i*visibleCount());startAuto();});dotsEl.appendChild(d);}}
+    function syncDots(){const vc=visibleCount();const page=Math.floor(currentIndex()/vc);dotsEl.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===page));prevBtn.disabled=track.scrollLeft<=1;nextBtn.disabled=track.scrollLeft>=track.scrollWidth-track.offsetWidth-1;}
+    prevBtn.addEventListener('click',()=>{clearInterval(autoTimer);scrollToIdx(currentIndex()-1);startAuto();});
+    nextBtn.addEventListener('click',()=>{clearInterval(autoTimer);scrollToIdx(currentIndex()+1);startAuto();});
+    track.addEventListener('scroll',syncDots,{passive:true});
+    function startAuto(){autoTimer=setInterval(()=>{const vc=visibleCount();const idx=currentIndex();scrollToIdx(idx+vc>=total?0:idx+1);},3500);}
+    track.addEventListener('touchstart',()=>clearInterval(autoTimer),{passive:true});
+    track.addEventListener('touchend',()=>startAuto(),{passive:true});
+    window.addEventListener('resize',()=>{buildDots();syncDots();});
+    buildDots();syncDots();startAuto();
+  });
 </script>
 </body>
 </html>
