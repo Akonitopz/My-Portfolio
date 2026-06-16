@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="images/kv-final.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kristopher Villafuerte — Virtual Assistant & Performance Marketing</title>
+<title>
+  Kristopher Villafuerte — Virtual Assistant & Performance Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,8 +25,10 @@
 
   header.bar{position:sticky;top:0;z-index:50;background:rgba(248,247,244,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .bar-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
-  .brand{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-0.01em}
-  .brand span{color:var(--green)}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{width:36px;height:36px;border-radius:8px}
+  .brand-name{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-0.01em}
+  .brand-name span{color:var(--green)}
   nav.links{display:flex;gap:26px}
   nav.links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
   nav.links a:hover{color:var(--ink)}
@@ -36,7 +40,7 @@
   .hero h1 em{font-style:normal;color:var(--green)}
   .hero .lede{margin-top:26px;font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:54ch}
   .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{font-family:var(--body);font-weight:600;font-size:15px;padding:13px 24px;border-radius:8px;text-decoration:none;display:inline-block;transition:transform .15s ease, background .15s ease}
+  .btn{font-family:var(--body);font-weight:600;font-size:15px;padding:13px 24px;border-radius:8px;text-decoration:none;display:inline-block;transition:transform .15s ease,background .15s ease}
   .btn-primary{background:var(--green);color:#fff}
   .btn-primary:hover{background:#0E5B42;transform:translateY(-1px)}
   .btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
@@ -56,10 +60,10 @@
 
   .flagship{background:var(--panel);color:#EFEFEA;border-radius:18px;padding:clamp(28px,4vw,52px)}
   .flagship .eyebrow{color:var(--green-bright)}
-  .flagship h2{color:#fff;font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,34px);letter-spacing:-0.02em;margin-top:12px}
+  .flagship h2{color:#fff;font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,32px);letter-spacing:-0.02em;margin-top:12px}
   .flagship .role{font-family:var(--mono);font-size:13px;color:#8C97A2;margin-top:10px}
   .flag-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:34px 0 30px}
-  .flag-grid .n{font-family:var(--mono);font-weight:600;font-size:clamp(24px,3.2vw,34px);color:var(--green-bright);letter-spacing:-0.02em}
+  .flag-grid .n{font-family:var(--mono);font-weight:600;font-size:clamp(22px,3vw,32px);color:var(--green-bright);letter-spacing:-0.02em}
   .flag-grid .l{font-size:12.5px;color:#9AA4AE;margin-top:6px}
   @media(max-width:720px){.flag-grid{grid-template-columns:repeat(2,1fr)}}
   .flag-chart{margin:26px 0;border-radius:12px;overflow:hidden;border:1px solid var(--panel-soft)}
@@ -76,7 +80,7 @@
 
   .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   @media(max-width:720px){.svc-grid{grid-template-columns:1fr}}
-  .svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;transition:border-color .15s ease, transform .15s ease}
+  .svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;transition:border-color .15s ease,transform .15s ease}
   .svc:hover{border-color:var(--green);transform:translateY(-2px)}
   .svc .num{font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:0.1em}
   .svc h3{font-family:var(--display);font-weight:600;font-size:19px;margin:12px 0 10px;letter-spacing:-0.01em}
@@ -116,7 +120,7 @@
 
   footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
@@ -125,7 +129,10 @@
 
 <header class="bar">
   <div class="wrap bar-inner">
-    <div class="brand">Kristopher<span>.</span>V</div>
+    <div class="brand">
+      <img src="images/kv-final.svg" alt="KV logo">
+      <div class="brand-name">Kristopher<span>.</span>V</div>
+    </div>
     <nav class="links">
       <a href="#results">Results</a>
       <a href="#services">Services</a>
@@ -136,68 +143,91 @@
   </div>
 </header>
 
-<!-- HERO + AGGREGATE -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow reveal">Virtual Assistant · Performance Marketing · Operations</span>
-    <h1 class="reveal">The VA who runs the <em>Ads</em>, the <em>community</em>, and the <em>back-end operations</em>.</h1>
+    <h1 class="reveal">The VA who runs the <em>ads</em>, the <em>community</em>, and the <em>back office</em>.</h1>
     <p class="lede reveal">4+ years helping US, UK, and AU businesses grow. I manage Meta ad spend across multiple brands, moderate high traffic communities, run CRM and onboarding systems, and keep the operations behind the scenes running clean.</p>
     <div class="hero-cta reveal">
       <a class="btn btn-primary" href="#contact">Work with me</a>
       <a class="btn btn-ghost" href="#results">See the proof</a>
     </div>
-
     <div class="metrics reveal">
-      <div class="metric"><div class="n">$80K+</div><div class="l">Monthly ad spend managed</div></div>
-      <div class="metric"><div class="n">32,000+</div><div class="l">Leads generated in 30 days</div></div>
-      <div class="metric"><div class="n">1,600+</div><div class="l">Customers in 30 days</div></div>
-      <div class="metric"><div class="n">$2.07</div><div class="l">Cost per lead, at lowest</div></div>
+      <div class="metric"><div class="n">$584K+</div><div class="l">Total ad spend managed across 4 brands</div></div>
+      <div class="metric"><div class="n">263,000+</div><div class="l">Total leads generated</div></div>
+      <div class="metric"><div class="n">11,289</div><div class="l">Total customers acquired</div></div>
+      <div class="metric"><div class="n">$2.22</div><div class="l">Blended cost per lead</div></div>
     </div>
-    <p class="metrics-note reveal">// Combined across the brands I manage. One brand broken out in full below.</p>
+    <p class="metrics-note reveal">// Jul 2025 to present · 4 brands · all numbers verified from daily KPI records</p>
   </div>
 </section>
 
-<!-- FLAGSHIP -->
+<!-- COMBINED RESULTS -->
 <section id="results">
   <div class="wrap">
     <div class="flagship reveal">
-      <span class="eyebrow">Flagship Case Study · One brand, full numbers</span>
-      <h2>Scaling a lead funnel to 61,000+ leads at $1.96 each</h2>
-      <div class="role">AGOA Gear Tester Funnel · Media Buyer · Jan to Mar 2026 · one of several brands managed</div>
+      <span class="eyebrow">Portfolio Overview · All 4 Brands</span>
+      <h2>$584K+ managed across 4 brands, 263,000+ leads at $2.22 each</h2>
+      <div class="role">Yentzer Media · Media Buyer · Jul 2025 to Present · AGOA, AOQ, EBG, FBBQ</div>
 
       <div class="flag-grid">
-        <div><div class="n">$120K+</div><div class="l">Managed over 10 weeks</div></div>
-        <div><div class="n">61,604</div><div class="l">Leads generated</div></div>
-        <div><div class="n">$1.96</div><div class="l">Blended cost per lead</div></div>
-        <div><div class="n">3,071</div><div class="l">Customers at ~$39 CPA</div></div>
+        <div><div class="n">$584K+</div><div class="l">Total spend</div></div>
+        <div><div class="n">263K+</div><div class="l">Total leads</div></div>
+        <div><div class="n">$2.22</div><div class="l">Blended CPL</div></div>
+        <div><div class="n">11,289</div><div class="l">Total customers</div></div>
       </div>
 
       <div class="flag-chart">
-        <img src="images/kpi-agoa.png" alt="Daily lead volume versus cost per lead for the AGOA Gear Tester Funnel, January to March 2026">
+        <img src="images/kpi-combined.png" alt="Weekly lead volume across 4 brands with blended CPL, July 2025 to May 2026">
       </div>
 
       <div class="flag-body">
         <div>
-          <h3>What I owned</h3>
+          <h3>Brands managed</h3>
           <ul>
-            <li>Ran the full Meta Ads account: campaign builds, budgets, and daily optimization.</li>
-            <li>Built custom, lookalike, and retargeting audiences to lift lead quality.</li>
-            <li>Scaled daily volume from ~500 to 1,400+ leads while holding CPL near $2.</li>
-            <li>Tracked every metric daily so spend decisions were made on data, not guesses.</li>
+            <li>AGOA Gear Tester — $120K, 61K leads at $1.96 CPL</li>
+            <li>AOQ Perfect Sticker — $399K, 167K leads at $2.38 CPL</li>
+            <li>EBG Gear Tester — $25K, 14K leads at $1.75 CPL</li>
+            <li>FBBQ Gear Tester — $40K, 20K leads at $2.01 CPL</li>
           </ul>
         </div>
         <div>
-          <h3>Why it matters</h3>
+          <h3>What I owned across all brands</h3>
           <ul>
-            <li>This is a front-end acquisition funnel, optimized for cost per lead and per customer.</li>
-            <li>Consistent CPL across 10 weeks shows the results were repeatable, not a fluke.</li>
-            <li>Full daily KPI records available on request for any campaign shown here.</li>
+            <li>Full Meta Ads account management: builds, budgets, and daily optimization.</li>
+            <li>Creative testing, audience segmentation, and retargeting across all accounts.</li>
+            <li>Daily KPI tracking and reporting for each brand.</li>
+            <li>Scaling winners while protecting CPA targets across campaigns.</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- AGOA DEEP DIVE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Case Study · AGOA Gear Tester Funnel</span>
+      <h2>Scaling one funnel to 61,000+ leads at $1.96 each</h2>
+      <p>The deepest data I can show. Daily records for 10 weeks across a single funnel.</p>
+    </div>
+    <div class="flagship reveal">
+      <div class="flag-grid">
+        <div><div class="n">$120K+</div><div class="l">Managed over 10 weeks</div></div>
+        <div><div class="n">61,604</div><div class="l">Leads generated</div></div>
+        <div><div class="n">$1.96</div><div class="l">Blended CPL</div></div>
+        <div><div class="n">3,071</div><div class="l">Customers at ~$39 CPA</div></div>
+      </div>
+      <div class="flag-chart">
+        <img src="images/kpi-agoa.png" alt="Daily lead volume versus CPL for AGOA Gear Tester, January to March 2026">
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- SERVICES -->
 <section id="services">
@@ -205,7 +235,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">What I do</span>
       <h2>One hire, four lanes covered</h2>
-      <p>Most VAs do one thing. I cover the full stack a small team needs, from the ad account to the inbox, so you brief once instead of managing four contractors.</p>
+      <p>Most VAs do one thing. I cover the full stack a small team needs, from the ad account to the inbox.</p>
     </div>
     <div class="svc-grid">
       <div class="svc reveal">
@@ -236,13 +266,70 @@
   </div>
 </section>
 
-<!-- WORK / GALLERY -->
+
+<!-- INDIVIDUAL CASE STUDIES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Case Studies · Individual Brands</span>
+      <h2>Three more accounts, same standard</h2>
+      <p>Each brand managed end to end. Daily KPI records available on request for all campaigns shown.</p>
+    </div>
+
+    <div class="flagship reveal" style="margin-bottom:24px">
+      <span class="eyebrow">AOQ Perfect Sticker Funnel</span>
+      <h2>167,000+ leads managed over 11 months at $2.38 CPL</h2>
+      <div class="role">Yentzer Media · Media Buyer · Jul 2025 – May 2026 · largest account by spend</div>
+      <div class="flag-grid">
+        <div><div class="n">$399K</div><div class="l">Total spend</div></div>
+        <div><div class="n">167,463</div><div class="l">Total leads</div></div>
+        <div><div class="n">$2.38</div><div class="l">Blended CPL</div></div>
+        <div><div class="n">6,676</div><div class="l">Customers acquired</div></div>
+      </div>
+      <div class="flag-chart">
+        <img src="images/kpi-aoq.png" alt="Daily lead volume versus CPL for AOQ Perfect Sticker, July 2025 to May 2026">
+      </div>
+    </div>
+
+    <div class="flagship reveal" style="margin-bottom:24px">
+      <span class="eyebrow">EBG Gear Tester</span>
+      <h2>14,000+ leads at the lowest CPL in the portfolio: $1.75</h2>
+      <div class="role">Yentzer Media · Media Buyer · Mar – May 2026</div>
+      <div class="flag-grid">
+        <div><div class="n">$25K</div><div class="l">Total spend</div></div>
+        <div><div class="n">14,333</div><div class="l">Total leads</div></div>
+        <div><div class="n">$1.75</div><div class="l">Blended CPL</div></div>
+        <div><div class="n">518</div><div class="l">Customers acquired</div></div>
+      </div>
+      <div class="flag-chart">
+        <img src="images/kpi-ebg.png" alt="Daily lead volume versus CPL for EBG Gear Tester, March to May 2026">
+      </div>
+    </div>
+
+    <div class="flagship reveal">
+      <span class="eyebrow">FBBQ Gear Tester Funnel</span>
+      <h2>20,000+ leads at $2.01 CPL and $38.92 CPA</h2>
+      <div class="role">Yentzer Media · Media Buyer · Jul – Dec 2025</div>
+      <div class="flag-grid">
+        <div><div class="n">$40K</div><div class="l">Total spend</div></div>
+        <div><div class="n">19,877</div><div class="l">Total leads</div></div>
+        <div><div class="n">$2.01</div><div class="l">Blended CPL</div></div>
+        <div><div class="n">1,024</div><div class="l">Customers at $38.92 CPA</div></div>
+      </div>
+      <div class="flag-chart">
+        <img src="images/kpi-fbbq.png" alt="Daily lead volume versus CPL for FBBQ Gear Tester, July to December 2025">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
 <section id="work">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Selected work</span>
       <h2>Creatives that ran</h2>
-      <p>Swap each slot for a real ad creative. Keep your three strongest and add a one line note on how each performed. Quality beats quantity here.</p>
+      <p>Swap each slot for a real ad creative. Keep your three strongest with a one line note on how each performed.</p>
     </div>
     <div class="gallery">
       <div class="slot reveal"><strong>[ Ad creative #1 ]</strong>Best performer. Caption it with its result.</div>
@@ -263,7 +350,7 @@
       <div class="tl-item">
         <div class="when">Jul 2025 – Present</div>
         <h3>Yentzer Media · Media Buyer & Community Manager</h3>
-        <p>Manage $80K+ in monthly Meta spend across multiple brands and high engagement Facebook communities, holding CPL and CPA targets while scaling.</p>
+        <p>Managing $584K+ in Meta spend across 4 brands, generating 263,000+ leads at a $2.22 blended CPL while holding CPA targets and scaling winning campaigns.</p>
       </div>
       <div class="tl-item">
         <div class="when">Feb 2023 – Jul 2024</div>
@@ -293,7 +380,7 @@
       </div>
       <div class="toolcat">
         <h4>AI & Automation</h4>
-        <ul><li>ChatGPT</li><li>Claude AI</li><li>Zendux AI</li><li>Google Apps Script</li></ul>
+        <ul><li>ChatGPT</li><li>Claude AI</li><li>Znedux AI</li><li>Google Apps Script</li></ul>
       </div>
       <div class="toolcat">
         <h4>Ops, Design & Comms</h4>
@@ -343,10 +430,9 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:0.12});
   document.querySelectorAll('.reveal').forEach((el,i)=>{
-    el.style.transitionDelay = (Math.min(i,6)*0.04)+'s';
+    el.style.transitionDelay=(Math.min(i,6)*0.04)+'s';
     io.observe(el);
   });
 </script>
-
 </body>
 </html>
