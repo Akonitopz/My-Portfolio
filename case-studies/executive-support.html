@@ -57,12 +57,14 @@
   .slot{border:1.5px dashed var(--line);border-radius:10px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6;background:#fff;overflow:hidden;height:100%;min-height:200px;display:flex;flex-direction:column;justify-content:center;padding:20px}
   .slot strong{color:var(--ink);display:block;font-size:12.5px;margin-bottom:4px}
   .slot img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block}
+  .doc-slot .video-thumb::after{display:none}
 
   /* VIDEO SLIDE */
   .video-slot{background:var(--panel);border:1px solid var(--panel-soft);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;height:100%;text-decoration:none;color:#EFEFEA;transition:transform .2s,border-color .2s}
   .video-slot:hover{transform:translateY(-3px);border-color:var(--bright)}
-  .video-thumb{aspect-ratio:16/9;background:#1A222B;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--panel-soft)}
-  .video-thumb::after{content:"▶";color:var(--bright);font-size:28px;background:rgba(16,21,26,0.85);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:3px}
+  .video-thumb{aspect-ratio:16/9;background:#1A222B;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--panel-soft);overflow:hidden}
+  .video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .video-thumb::after{content:"▶";color:var(--bright);font-size:28px;background:rgba(16,21,26,0.85);width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:3px;position:absolute;z-index:2}
   .video-meta{padding:16px}
   .video-meta .label{font-family:var(--mono);font-size:10.5px;color:var(--bright);letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:6px}
   .video-meta .title{font-family:var(--display);font-size:14px;font-weight:600;line-height:1.35;color:#fff}
@@ -105,7 +107,6 @@
 <!-- REI KASH · OPERATIONS + CRM -->
 <section>
   <div class="wrap">
-    <span class="sec-label">Case Study 01</span>
     <h2 class="sec-title">REI Kash · Real Estate Operations & CRM</h2>
     <p class="sec-sub">17 months running back-end operations for a US real estate wholesaling business. Owned the customer journey from first contact through onboarding, and kept the CRM clean as the lead base grew.</p>
     <div class="case reveal">
@@ -116,40 +117,20 @@
         <div>
           <h4>What I owned</h4>
           <ul>
-            <li>CRM management: contact records, pipeline hygiene, and segmentation.</li>
+            <li>CRM management: Building workflows, Triggers, and Landing Pages.</li>
             <li>New customer onboarding from sign-up through first call.</li>
             <li>Weekly newsletter writing and scheduling.</li>
-            <li>Live support coverage for existing customers.</li>
+            <li>Daily live support coverage for existing customers.</li>
           </ul>
         </div>
         <div>
           <h4>Tools & systems</h4>
           <ul>
-            <li>SalesPype CRM for contact, pipeline, and automation.</li>
-            <li>GoHighLevel for newsletters and campaign workflows.</li>
+            <li>REI Kash CRM for contact, pipeline, and automation.</li>
+            <li>FRONT for Email support and email management.</li>
             <li>Zoom and Google Meet for live support sessions.</li>
             <li>Google Workspace and ClickUp for documentation and tasks.</li>
           </ul>
-        </div>
-      </div>
-    </div>
-    <div class="reveal">
-      <p style="font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:18px">// CRM, onboarding, and pipeline screenshots</p>
-      <div class="carousel-wrap" data-carousel>
-        <div class="carousel-track">
-          <div class="carousel-slide"><div class="slot"><strong>[ Screenshot #1 ]</strong>CRM pipeline view.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Screenshot #2 ]</strong>Onboarding workflow.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Screenshot #3 ]</strong>Contact segmentation.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Screenshot #4 ]</strong>Automation setup.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Screenshot #5 ]</strong>Customer profile.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Screenshot #6 ]</strong>Pipeline reporting.</div></div>
-        </div>
-        <div class="carousel-controls">
-          <div class="carousel-dots"></div>
-          <div class="carousel-nav">
-            <button class="carousel-btn prev">&#8592;</button>
-            <button class="carousel-btn next">&#8594;</button>
-          </div>
         </div>
       </div>
     </div>
@@ -159,17 +140,10 @@
 <!-- LIVE SUPPORT RECORDING -->
 <section>
   <div class="wrap">
-    <span class="sec-label">Case Study 02</span>
     <h2 class="sec-title">Live customer support recording</h2>
-    <p class="sec-sub">A recorded live support session walking a REI Kash customer through their account. Click to watch.</p>
+    <p class="sec-sub">A recorded live support session walking a REI Kash customer through their account and providing support. Click to watch.</p>
     <div class="reveal">
-      <a href="REPLACE_WITH_LIVE_SUPPORT_DRIVE_LINK" target="_blank" rel="noopener" class="video-slot" style="max-width:520px;display:block">
-        <div class="video-thumb"></div>
-        <div class="video-meta">
-          <span class="label">Live Support · Aug 28 2024</span>
-          <div class="title">REI Kash customer support session</div>
-        </div>
-      </a>
+      <a href="https://drive.google.com/file/d/1AGgkB2cumb0vtw7pEel_m_lH97OAIa4A/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1AGgkB2cumb0vtw7pEel_m_lH97OAIa4A&sz=w800" alt=""></div><div class="video-meta"><span class="label">Live Support · Aug 28 2024</span><div class="title">REI Kash customer support session</div></div></div></a>
     </div>
   </div>
 </section>
@@ -177,20 +151,19 @@
 <!-- TRAINING VIDEOS -->
 <section>
   <div class="wrap">
-    <span class="sec-label">Case Study 03</span>
     <h2 class="sec-title">Training videos & video SOPs</h2>
     <p class="sec-sub">Step-by-step walkthroughs I recorded so new hires and customers could learn the systems without sitting through a live call. Each one is a self-contained how-to on a specific REI Kash workflow.</p>
     <div class="reveal">
       <div class="carousel-wrap" data-carousel>
         <div class="carousel-track">
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">Campaign That Needs Customization</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Clone Main Account to Sub Accounts</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Delete Cache</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Remove a Contact from a Campaign</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Upload Contacts</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">Phone Settings</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">REI Kash Effective Messaging</div></div></div></a>
-          <a href="REPLACE_WITH_DRIVE_LINK" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"></div><div class="video-meta"><span class="label">Training</span><div class="title">YouTube Video Trigger Explanation</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1tVQVz0-t-nEv0ak6sFh_1CaOArY52Q1K/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1tVQVz0-t-nEv0ak6sFh_1CaOArY52Q1K&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">Campaign That Needs Customization</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1YS0jVqMrcdS4vhSLw8gxdiSX9i8V6FSl/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1YS0jVqMrcdS4vhSLw8gxdiSX9i8V6FSl&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Clone Main Account to Sub Accounts</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1edTOW2yCAvqPYb5BDR3g3sG33ZGCE94V/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1edTOW2yCAvqPYb5BDR3g3sG33ZGCE94V&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Delete Cache</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1QNWjvQc6SqXDePMtaMLpvvAIHnmd8oDK/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1QNWjvQc6SqXDePMtaMLpvvAIHnmd8oDK&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Remove a Contact from a Campaign</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1MvA9XqLIghnszNgnvpJiecLV7P3vkSyu/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1MvA9XqLIghnszNgnvpJiecLV7P3vkSyu&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">How to Upload Contacts</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1Qjvue6N8JA9cDFedEBtBKkutsYHJT4hR/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1Qjvue6N8JA9cDFedEBtBKkutsYHJT4hR&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">Phone Settings</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1c2WGY0y8PR27IrTeEY850nUJ-wxqkmxC/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1c2WGY0y8PR27IrTeEY850nUJ-wxqkmxC&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">REI Kash Effective Messaging</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1lvsZLH4OmZcyMD9oFPDNVFfCWZzhD70h/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1lvsZLH4OmZcyMD9oFPDNVFfCWZzhD70h&sz=w800" alt=""></div><div class="video-meta"><span class="label">Training</span><div class="title">YouTube Video Trigger Explanation</div></div></div></a>
         </div>
         <div class="carousel-controls">
           <div class="carousel-dots"></div>
@@ -207,50 +180,16 @@
 <!-- SOPS -->
 <section>
   <div class="wrap">
-    <span class="sec-label">Case Study 04</span>
     <h2 class="sec-title">Written SOPs & process docs</h2>
-    <p class="sec-sub">Written SOPs that paired with the training videos. New hires used these to learn the system on their own time, freeing up support hours.</p>
+    <p class="sec-sub">Written SOPs based on the REI Kash Knowledge Base. Customers and new hires used these to learn the system on their own time, freeing up support hours.</p>
     <div class="reveal">
       <div class="carousel-wrap" data-carousel>
         <div class="carousel-track">
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #1 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #2 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #3 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #4 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #5 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #6 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #7 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ SOP #8 ]</strong>Add SOP screenshot or PDF preview.</div></div>
-        </div>
-        <div class="carousel-controls">
-          <div class="carousel-dots"></div>
-          <div class="carousel-nav">
-            <button class="carousel-btn prev">&#8592;</button>
-            <button class="carousel-btn next">&#8594;</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTERS -->
-<section>
-  <div class="wrap">
-    <span class="sec-label">Case Study 05</span>
-    <h2 class="sec-title">Weekly newsletters</h2>
-    <p class="sec-sub">Weekly newsletters written and scheduled through GoHighLevel to keep REI Kash subscribers engaged. A sample below.</p>
-    <div class="reveal">
-      <div class="carousel-wrap" data-carousel>
-        <div class="carousel-track">
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #1 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #2 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #3 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #4 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #5 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #6 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #7 ]</strong>Add newsletter screenshot.</div></div>
-          <div class="carousel-slide"><div class="slot"><strong>[ Newsletter #8 ]</strong>Add newsletter screenshot.</div></div>
+          <a href="https://drive.google.com/file/d/1-d46APwj71cN_yAKTCVnTwG7ZZUyRghX/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot doc-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1-d46APwj71cN_yAKTCVnTwG7ZZUyRghX&sz=w800" alt=""></div><div class="video-meta"><span class="label">SOP</span><div class="title">REI Kash · How REI Kash Works</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1YuNA9EBUZPhktjEXUUN7jZtnNK-gBlPr/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot doc-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1YuNA9EBUZPhktjEXUUN7jZtnNK-gBlPr&sz=w800" alt=""></div><div class="video-meta"><span class="label">SOP</span><div class="title">Registering for A2P and 10DLC</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1WDGCf5i9PZwPOULb-Eiqi-WhLpbMS1xo/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot doc-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1WDGCf5i9PZwPOULb-Eiqi-WhLpbMS1xo&sz=w800" alt=""></div><div class="video-meta"><span class="label">SOP</span><div class="title">Power Dialer / Multi Line Dialer</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1xhhAay-8k1vsKcGy5QUh0sa3PeKvG-5E/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot doc-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1xhhAay-8k1vsKcGy5QUh0sa3PeKvG-5E&sz=w800" alt=""></div><div class="video-meta"><span class="label">SOP</span><div class="title">Uploading a Campaign</div></div></div></a>
+          <a href="https://drive.google.com/file/d/1gxRdi_7-xotNL3frNTFjlIV6CSqQm200/view?usp=sharing" target="_blank" rel="noopener" class="carousel-slide"><div class="video-slot doc-slot"><div class="video-thumb"><img src="https://drive.google.com/thumbnail?id=1gxRdi_7-xotNL3frNTFjlIV6CSqQm200&sz=w800" alt=""></div><div class="video-meta"><span class="label">SOP</span><div class="title">How to Respond to a Message</div></div></div></a>
         </div>
         <div class="carousel-controls">
           <div class="carousel-dots"></div>
