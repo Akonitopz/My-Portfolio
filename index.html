@@ -95,9 +95,184 @@
   .ready-section h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3vw,32px);letter-spacing:-0.02em;margin-top:12px;margin-bottom:32px}
   .ready-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   @media(max-width:680px){.ready-grid{grid-template-columns:1fr}}
-  .ready{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .ready{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;text-align:left}
   .ready .k{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
   .ready .v{font-size:14.5px}
+
+  /* READY BUTTON INTERACTIVE STYLES */
+  .ready-btn{
+    cursor:pointer;
+    background:var(--card);
+    border:1px solid var(--line);
+    transition:all .2s ease;
+    font-family:inherit;
+    position:relative;
+  }
+  .ready-arrow{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    font-size:14px;
+    color:var(--green);
+    opacity:0;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .ready-btn:hover{
+    border-color:var(--green);
+    box-shadow:0 4px 16px rgba(18,110,80,0.08);
+    transform:translateY(-2px);
+  }
+  .ready-btn:hover .ready-arrow{
+    opacity:1;
+    transform:translateX(4px);
+  }
+  .ready-btn:active{
+    transform:translateY(0);
+  }
+
+  /* MODAL STYLES */
+  .ready-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
+  }
+  .ready-modal.active{
+    display:flex;
+  }
+  .ready-modal-backdrop{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(20,23,28,0.5);
+    backdrop-filter:blur(4px);
+    cursor:pointer;
+  }
+  .ready-modal-content{
+    position:relative;
+    z-index:10;
+    background:var(--card);
+    border-radius:16px;
+    max-width:90%;
+    max-height:90vh;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(20,23,28,0.3);
+    animation:modalSlideIn .3s ease;
+  }
+  @keyframes modalSlideIn{
+    from{
+      opacity:0;
+      transform:scale(0.95);
+    }
+    to{
+      opacity:1;
+      transform:scale(1);
+    }
+  }
+  .ready-modal-inner{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:stretch;
+    justify-content:flex-start;
+    overflow:auto;
+  }
+  .ready-modal-inner img{
+    flex:1;
+    max-width:60%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+  }
+  @media(max-width:768px){
+    .ready-modal-inner img{
+      max-width:100%;
+    }
+  }
+  .ready-modal-close{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:36px;
+    height:36px;
+    border:none;
+    background:rgba(20,23,28,0.1);
+    color:var(--ink);
+    border-radius:8px;
+    font-size:24px;
+    cursor:pointer;
+    transition:background .2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:11;
+  }
+  .ready-modal-close:hover{
+    background:rgba(20,23,28,0.2);
+  }
+  .ready-modal-details{
+    padding:28px;
+    max-width:400px;
+    border-left:1px solid var(--line);
+  }
+  #readyModalInner.availability-only img{
+    display:none;
+  }
+  #readyModalInner.availability-only{
+    justify-content:center;
+  }
+  #readyModalInner.availability-only .ready-modal-details{
+    border-left:none;
+    max-width:500px;
+  }
+  @media(max-width:768px){
+    .ready-modal-inner{
+      flex-direction:column;
+    }
+    .ready-modal-details{
+      border-left:none;
+      border-top:1px solid var(--line);
+      max-width:100%;
+    }
+  }
+  .ready-modal-details h3{
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:16px;
+    color:var(--ink);
+  }
+  .detail-item{
+    margin-bottom:16px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .detail-item:last-child{
+    border-bottom:none;
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+  .detail-label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--green);
+    margin-bottom:4px;
+    font-weight:500;
+  }
+  .detail-value{
+    font-size:14px;
+    color:var(--ink);
+    line-height:1.5;
+  }
 
   /* CONTACT */
   .contact-section{padding:80px 0}
@@ -251,10 +426,38 @@
     <span class="eyebrow reveal">Remote ready</span>
     <h2 class="reveal">Set up to start day one</h2>
     <div class="ready-grid reveal">
-      <div class="ready"><div class="k">Internet</div><div class="v">High-speed fiber with mobile hotspot backup</div></div>
-      <div class="ready"><div class="k">Equipment</div><div class="v">Noise-cancelling headset and HD webcam</div></div>
-      <div class="ready"><div class="k">Workspace</div><div class="v">Dedicated, quiet home office</div></div>
-      <div class="ready"><div class="k">Availability</div><div class="v">Flexible for US, UK, and AU time zones</div></div>
+      <button class="ready ready-btn" data-type="internet">
+        <div class="k">Internet</div>
+        <div class="v">High-speed fiber with mobile hotspot backup</div>
+        <span class="ready-arrow">→</span>
+      </button>
+      <button class="ready ready-btn" data-type="equipment">
+        <div class="k">Equipment</div>
+        <div class="v">High Performance Laptop with Peripherals</div>
+        <span class="ready-arrow">→</span>
+      </button>
+      <button class="ready ready-btn" data-type="workspace">
+        <div class="k">Workspace</div>
+        <div class="v">Dedicated, quiet home office</div>
+        <span class="ready-arrow">→</span>
+      </button>
+      <button class="ready ready-btn" data-type="availability">
+        <div class="k">Availability</div>
+        <div class="v">Flexible for US, UK, and AU time zones</div>
+        <span class="ready-arrow">→</span>
+      </button>
+    </div>
+
+    <!-- MODAL OVERLAY -->
+    <div class="ready-modal" id="readyModal">
+      <div class="ready-modal-backdrop"></div>
+      <div class="ready-modal-content">
+        <button class="ready-modal-close" aria-label="Close">×</button>
+        <div class="ready-modal-inner" id="readyModalInner">
+          <img id="readyModalImage" src="" alt="Setup details" />
+          <div class="ready-modal-details" id="readyModalDetails"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -277,8 +480,116 @@
 <footer><div class="wrap">Kristopher Janulgue Villafuerte · Cagayan de Oro City, Philippines</div></footer>
 
 <script>
+  // Reveal animation on scroll
   const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0.1});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,5)*0.05)+'s';io.observe(el)});
+
+  const modal = document.getElementById('readyModal');
+  const modalImage = document.getElementById('readyModalImage');
+  const closeBtn = document.querySelector('.ready-modal-close');
+  const backdrop = document.querySelector('.ready-modal-backdrop');
+  const readyBtns = document.querySelectorAll('.ready-btn');
+
+  
+ const imageMap = {
+  internet: 'images/Home Office Setup/Internet with Back-up.png',
+  equipment: 'images/Home Office Setup/equipment.jpg',
+  workspace: 'images/Home Office Setup/workspace.jpg'
+};
+
+  const detailsMap = {
+    internet: {
+      title: 'Internet Setup',
+      details: [
+        { label: 'Connection', value: 'GameTech Fiber Connection' },
+        { label: 'Backup', value: 'Smart 5G Max Prepaid Wifi' },
+        { label: 'Speed', value: '100 MBPS' },
+        { label: 'Equipment', value: 'Home Wifi with Prepaid wifi for back-up' }
+      ]
+    },
+    equipment: {
+      title: 'PC & Peripherals',
+      details: [
+        { label: 'CPU', value: 'Intel Core i5-12400H' },
+        { label: 'GPU', value: 'NVIDIA RTX 4060' },
+        { label: 'RAM', value: '24GB DDR5' },
+        { label: 'Storage', value: '512GB NVMe SSD' },
+        { label: 'Headset', value: 'Noise-cancelling with HD mic' },
+        { label: 'Keyboard', value: 'Mechanical keyboard' },
+        { label: 'Webcam', value: '1080p HD quality' }
+      ]
+    },
+    workspace: {
+      title: 'Home Office Setup',
+      details: [
+        { label: 'Desk', value: 'Standard Office Desk' },
+        { label: 'Monitor', value: 'Aux monitor for dual-screen' },
+        { label: 'Lighting', value: 'Room Light' },
+        { label: 'Environment', value: 'Quiet, dedicated office space' },
+        { label: 'Comfort', value: 'Professional ergonomic setup' }
+      ]
+    },
+    availability: {
+      title: 'Availability',
+      details: [
+        { label: 'US Time', value: 'PST to EST fully covered' },
+        { label: 'UK Time', value: 'GMT fully covered' },
+        { label: 'AU Time', value: 'AEST partially covered' },
+        { label: 'Flexibility', value: 'Adjustable to client needs' }
+      ]
+    }
+  };
+
+  // Open modal
+  readyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.type;
+      const modalInner = document.getElementById('readyModalInner');
+      const detailsContainer = document.getElementById('readyModalDetails');
+      const detailsData = detailsMap[type];
+      
+      // Remove previous class
+      modalInner.classList.remove('availability-only');
+      
+      // Show/hide image based on type
+      if (type === 'availability') {
+        modalInner.classList.add('availability-only');
+      } else if (imageMap[type]) {
+        modalImage.src = imageMap[type];
+      }
+      
+      // Populate details
+      let detailsHTML = `<h3>${detailsData.title}</h3>`;
+      detailsData.details.forEach(detail => {
+        detailsHTML += `
+          <div class="detail-item">
+            <div class="detail-label">${detail.label}</div>
+            <div class="detail-value">${detail.value}</div>
+          </div>
+        `;
+      });
+      
+      detailsContainer.innerHTML = detailsHTML;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 </script>
 </body>
 </html>
